@@ -6,7 +6,7 @@ on:
 env:
   RESOURCE-GROUP: rg-eshoponweb-gh
   LOCATION: westeurope
-  TEMPLATE_FILE: infra/simple-windows-vm.bicep
+  TEMPLATE-FILE: infra/simple-windows-vm.bicep
 
 jobs:
   deploy:
@@ -26,5 +26,5 @@ jobs:
           inlineScript: |
 
             az deployment group create \
-              --resource-group $RESOURCE_GROUP \
-              --template-file $TEMPLATE_FILE
+              --resource-group $RESOURCE-GROUP \
+              --template-file $TEMPLATE-FILE
