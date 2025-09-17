@@ -4,7 +4,7 @@ on:
   workflow_dispatch: # kjør manuelt
 
 env:
-  RESOURCE-GROUP: rg-eshoponweb-gh
+  RESOURCE-GROUP: rg-eshoponweb-vm
   LOCATION: westeurope
   TEMPLATE-FILE: infra/simple-windows-vm.bicep
 
@@ -24,6 +24,9 @@ jobs:
         uses: azure/cli@v2
         with:
           inlineScript: |
+            az group create \
+              --location $LOCATION \
+              --name $RESOURCE-GROUP
 
             az deployment group create \
               --resource-group $RESOURCE-GROUP \
