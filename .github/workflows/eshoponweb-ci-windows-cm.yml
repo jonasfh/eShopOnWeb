@@ -24,9 +24,6 @@ jobs:
         uses: azure/cli@v2
         with:
           inlineScript: |
-            az group create \
-              --location $LOCATION \
-              --name $RESOURCE_GROUP
 
             az deployment group create \
               --resource-group $RESOURCE_GROUP \
